@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types"; // Import PropTypes
 
 const TaskModal = ({ isOpen, onClose, onSubmit, taskToEdit }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState("Low");
 
-  // Pre-fill the form if editing
+  // Reset fields when the modal is opened
   useEffect(() => {
     if (taskToEdit) {
+      // Pre-fill values for editing
       setTitle(taskToEdit.title || "");
       setDescription(taskToEdit.description || "");
       setPriority(taskToEdit.priority || "Low");
     } else {
+      // Reset values for creating a new task
       setTitle("");
       setDescription("");
       setPriority("Low");
     }
-  }, [taskToEdit]);
+  }, [taskToEdit, isOpen]);
 
   const handleSubmit = () => {
     if (title.trim() === "") {
@@ -100,19 +101,5 @@ const TaskModal = ({ isOpen, onClose, onSubmit, taskToEdit }) => {
     </div>
   );
 };
-
-// Props validation
-TaskModal.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired,
-  taskToEdit: PropTypes.shape({
-    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    title: PropTypes.string,
-    description: PropTypes.string,
-    priority: PropTypes.oneOf(["High", "Medium", "Low"]),
-  }), 
-};
-
 
 export default TaskModal;
