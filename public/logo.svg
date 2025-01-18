@@ -1,0 +1,41 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 100 100"
+  width="150"
+  height="150"
+  fill="none"
+>
+  <!-- Circle Background -->
+  <circle cx="50" cy="50" r="48" fill="#4CAF50" stroke="#2E7D32" stroke-width="4" />
+
+  <!-- Inner Circle -->
+  <circle cx="50" cy="50" r="35" fill="white" />
+
+  <!-- Abstract Checkmark -->
+  <path
+    d="M35 50 l10 10 l20 -20"
+    stroke="#4CAF50"
+    stroke-width="8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+
+  <!-- Taskboard-like Icon -->
+  <rect x="60" y="30" width="8" height="30" rx="2" fill="#FFC107" />
+  <rect x="70" y="40" width="8" height="20" rx="2" fill="#FFC107" />
+  <rect x="50" y="45" width="8" height="15" rx="2" fill="#FFC107" />
+
+  <!-- Text -->
+  <text
+    x="50"
+    y="85"
+    text-anchor="middle"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="10"
+    fill="#2E7D32"
+    font-weight="bold"
+  >
+    TaskBoard
+  </text>
+</svg>
